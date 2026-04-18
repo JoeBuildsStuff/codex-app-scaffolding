@@ -11,8 +11,6 @@
   --accent: oklch(0.97 0 0);
   --accent-soft: rgba(183, 75, 42, 0.14);
   --shadow: 0 20px 60px rgba(17, 17, 17, 0.08);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -41,6 +39,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
 }
 
 * {
