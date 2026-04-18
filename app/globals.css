@@ -1,0 +1,312 @@
+:root {
+  --background: #f3efe7;
+  --foreground: #111111;
+  --muted: rgba(17, 17, 17, 0.7);
+  --line: rgba(17, 17, 17, 0.12);
+  --panel: rgba(255, 255, 255, 0.5);
+  --accent: #b74b2a;
+  --accent-soft: rgba(183, 75, 42, 0.14);
+  --shadow: 0 20px 60px rgba(17, 17, 17, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(183, 75, 42, 0.2), transparent 30%),
+    radial-gradient(circle at right 20%, rgba(20, 72, 99, 0.16), transparent 24%),
+    linear-gradient(180deg, #f8f4ec 0%, var(--background) 100%);
+  color: var(--foreground);
+  font-family: var(--font-heading), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+ol,
+ul {
+  margin: 0;
+}
+
+.page-shell {
+  min-height: 100vh;
+}
+
+.hero {
+  position: relative;
+  overflow: clip;
+  min-height: 100svh;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.hero__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.08)),
+    linear-gradient(180deg, rgba(17, 17, 17, 0), rgba(17, 17, 17, 0.08));
+  pointer-events: none;
+}
+
+.hero__header,
+.hero__body,
+.band,
+.workflow,
+.launch {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__header,
+.hero__body,
+.band,
+.workflow,
+.launch {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+.hero__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.eyebrow,
+.hero__kicker,
+.section-label,
+.workflow__index {
+  font-family: var(--font-mono), monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+}
+
+.hero__nav {
+  display: flex;
+  gap: 1.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.hero__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.8fr);
+  align-items: end;
+  gap: 3rem;
+  padding: 4rem 0 2rem;
+}
+
+.hero__copy {
+  max-width: 760px;
+}
+
+.hero__kicker,
+.section-label {
+  color: var(--accent);
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(3.4rem, 8vw, 7.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  max-width: 11ch;
+}
+
+.hero__lede {
+  margin-top: 1.5rem;
+  max-width: 36rem;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.8rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button--primary {
+  background: var(--foreground);
+  color: #f7f3eb;
+  border-color: var(--foreground);
+}
+
+.button--secondary {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(14px);
+}
+
+.hero__aside {
+  align-self: center;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.hero__aside p,
+.hero__aside li,
+.pillar__detail,
+.workflow p,
+.checklist li {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.hero__aside ul {
+  margin-top: 1.25rem;
+  padding-left: 1.15rem;
+}
+
+.band,
+.workflow,
+.launch {
+  padding: 4rem 1.5rem 5rem;
+}
+
+.section-heading {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 44rem;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 3vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.pillar-list,
+.workflow__grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.pillar-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pillar,
+.workflow__grid > div {
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.pillar__label,
+.workflow h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+
+.workflow__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.workflow__index {
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+
+.checklist {
+  margin-top: 2rem;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-inline: 1rem;
+  }
+
+  .hero__header,
+  .hero__body,
+  .band,
+  .workflow,
+  .launch {
+    width: 100%;
+  }
+
+  .hero__header,
+  .hero__body,
+  .pillar-list,
+  .workflow__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero__body {
+    gap: 2rem;
+    padding-top: 3rem;
+  }
+
+  .hero h1 {
+    max-width: 9ch;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__nav {
+    flex-wrap: wrap;
+    gap: 0.8rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 16vw, 4.4rem);
+  }
+
+  .band,
+  .workflow,
+  .launch {
+    padding-inline: 1rem;
+  }
+}
