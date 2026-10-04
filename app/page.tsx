@@ -1,3 +1,9 @@
+import {
+  Message,
+  MessageContent,
+  MessageResponse,
+} from "@/components/ai-elements/message";
+
 const pillars = [
   {
     label: "Fast start",
@@ -22,7 +28,7 @@ const checkpoints = [
 export default function Home() {
   return (
     <main className="page-shell">
-      <section className="hero">
+      <section className="hero pr-14 sm:pr-16">
         <div className="hero__veil" />
         <header className="hero__header">
           <span className="eyebrow">Signal Starter</span>
@@ -61,6 +67,20 @@ export default function Home() {
               <li>Responsive homepage shell</li>
             </ul>
           </aside>
+        </div>
+      </section>
+
+      <section className="band" id="ai-elements" aria-label="AI Elements verification">
+        <div className="section-heading">
+          <p className="section-label">AI Elements</p>
+          <h2>Installed and ready.</h2>
+        </div>
+        <div className="max-w-2xl">
+          <Message from="assistant">
+            <MessageContent>
+              <MessageResponse>Hello, world!</MessageResponse>
+            </MessageContent>
+          </Message>
         </div>
       </section>
 
